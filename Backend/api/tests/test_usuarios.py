@@ -11,16 +11,16 @@ class UsuarioTest(TestCase):
 
     def test_creacion_usuario(self):
         usuario = Usuario.objects.create_user(
-            correo_electronico="user@example.com",
-            password="pass1234",
-            nombre="Usuario Ejemplo",
+            correo_electronico="ziriusdai@gmail.com",
+            password="samuel123",
+            nombre="samuel",
             tipo_documento="CC",
             documento="123456789",
-            celular="+12345678901",
+            celular="3160526457",
             rol=self.rol
         )
-        self.assertEqual(usuario.correo_electronico, "user@example.com")
-        self.assertTrue(usuario.check_password("pass1234"))
+        self.assertEqual(usuario.correo_electronico, "ziriusdai@gmail.com")
+        self.assertTrue(usuario.check_password("samuel123"))
 
 if __name__ == '__main__':
     unittest.main()

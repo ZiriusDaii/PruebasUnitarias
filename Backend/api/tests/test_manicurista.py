@@ -14,8 +14,8 @@ class ManicuristaTest(TestCase):
             tipo_documento="CC",
             numero_documento="123456789",
             especialidad="Manicure Clásica",
-            celular="+12345678901",
-            correo="ana@example.com",
+            celular="12345678901",
+            correo="ana@gmail.com",
             estado="activo"
         )
         self.assertEqual(manicurista.nombre, "Ana María Pérez")
@@ -34,7 +34,7 @@ class ManicuristaTest(TestCase):
 
     def test_contraseña_temporal_y_cambio(self):
         manicurista = Manicurista(nombre="Carlos López")
-        manicurista.save()  # Guardar para evitar error
+        manicurista.save()  
         contraseña_temp = manicurista.generar_contraseña_temporal()
         self.assertTrue(manicurista.debe_cambiar_contraseña)
         self.assertTrue(manicurista.verificar_contraseña_temporal(contraseña_temp))

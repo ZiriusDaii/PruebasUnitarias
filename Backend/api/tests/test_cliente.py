@@ -13,8 +13,8 @@ class ClienteTest(TestCase):
             tipo_documento="CC",
             documento="123456789",
             nombre="Juan Pérez",
-            celular="+12345678901",
-            correo_electronico="juan@example.com",
+            celular="3160526457",
+            correo_electronico="juan@gmail.com",
             direccion="Calle Falsa 123",
             estado=True,
             genero="M"
@@ -26,7 +26,7 @@ class ClienteTest(TestCase):
 
     def test_generar_verificar_contraseña_temporal(self):
         cliente = Cliente(nombre="Adriana López")
-        cliente.save()  # Guardar para evitar error de pk
+        cliente.save()  
         contraseña_temp = cliente.generar_contraseña_temporal()
         self.assertTrue(cliente.debe_cambiar_contraseña)
         self.assertTrue(cliente.verificar_contraseña_temporal(contraseña_temp))
