@@ -22,7 +22,7 @@ para asegurar la calidad y correcto funcionamiento de los modelos de negocio imp
 
 ### intalar requerimientos
 - pip install -r requirements.txt
-###hacer las migraciones
+### hacer las migraciones
 - python manage.py makemigrations
 
 - python manage.py migrate
