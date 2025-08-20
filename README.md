@@ -20,23 +20,22 @@ para asegurar la calidad y correcto funcionamiento de los modelos de negocio imp
 
 ## Comandos para inicializar el proyecto
 
--intalar requerimientos
-pip install -r requirements.txt
+### intalar requerimientos
+- pip install -r requirements.txt
+###hacer las migraciones
+- python manage.py makemigrations
 
--hacer las migraciones
-python manage.py makemigrations
-
-python manage.py migrate
+- python manage.py migrate
 
 ## COMANDOS PARA HACER LAS 5 PRUEBAS
 
-1.
-python manage.py test api.tests.test_roles
-2.
-python manage.py test api.tests.test_cliente
-3.
-python manage.py test api.tests.test_manicurista
-4.
-python manage.py test api.tests.test_novedades
-5.
-python manage.py test api.tests.test_usuarios
+
+- python manage.py test api.tests.test_roles
+  
+- python manage.py test api.tests.test_cliente
+
+- python manage.py test api.tests.test_manicurista
+
+- python manage.py test api.tests.test_novedades
+
+- python manage.py test api.tests.test_usuarios
