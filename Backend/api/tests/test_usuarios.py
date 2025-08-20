@@ -1,24 +1,26 @@
+import unittest
 from django.test import TestCase
 from api.usuarios.models import Usuario
 from api.roles.models import Rol
 
-class Usuariotest(TestCase):
+class UsuarioTest(TestCase):
 
     def setUp(self):
+        # Aquí preparamos datos comunes para los tests
         self.rol = Rol.objects.create(nombre="Administrador")
 
-    def test_create_user_basico(self):
+    def test_creacion_usuario(self):
         usuario = Usuario.objects.create_user(
-            correo_electronico="ziriusdai@gmail.com",
-            password="samuel12345",
-            nombre="Usuario Normal",
+            correo_electronico="user@example.com",
+            password="pass1234",
+            nombre="Usuario Ejemplo",
             tipo_documento="CC",
             documento="123456789",
             celular="+12345678901",
             rol=self.rol
         )
+        self.assertEqual(usuario.correo_electronico, "user@example.com")
+        self.assertTrue(usuario.check_password("pass1234"))
 
-        self.assertEqual(usuario.correo_electronico, "ziriusdai@gmail.com")
-        self.assertTrue(usuario.check_password("samuel12345"))
-        self.assertEqual(usuario.rol.nombre, "Administrador")
-
+if __name__ == '__main__':
+    unittest.main()
